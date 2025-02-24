@@ -30,8 +30,14 @@ export const Banner = () => {
           </a>
         </div>
 
-        {/* Right Section - Background Image */}
-        <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-opacity-60 bg-[url('oo.jpg')] bg-fixed"></div>
+        {/* Right Section - Image */}
+        <div className="relative w-full lg:w-1/2 h-full">
+          <img
+            src="/oo.jpg"  // Ensure the image is in the public folder
+            alt="Workout"
+            className="w-full h-full object-cover object-center" // Ensure the image covers the right side area
+          />
+        </div>
       </div>
 
       {/* Stats Section */}
@@ -73,85 +79,6 @@ export const Banner = () => {
           </p>
         </div>
       </div>
-
-      {/* Add Keyframe Animations */}
-      <style>
-        {`
-          @keyframes fadeInText {
-            0% {
-              opacity: 0;
-              transform: translateY(50px);
-            }
-            100% {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          @keyframes slideInFromLeft {
-            0% {
-              transform: translateX(-50px);
-              opacity: 0;
-            }
-            100% {
-              transform: translateX(0);
-              opacity: 1;
-            }
-          }
-
-          @keyframes infiniteScroll {
-            0% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(20px);
-            }
-            100% {
-              transform: translateY(0);
-            }
-          }
-
-          .animate__fadeInUp {
-            animation: fadeInText 1.2s ease-out forwards;
-          }
-
-          .animate__fadeInUp.delay-200 {
-            animation-delay: 0.2s;
-          }
-
-          .animate__fadeInUp.delay-400 {
-            animation-delay: 0.4s;
-          }
-
-          .animate__fadeInUp.delay-600 {
-            animation-delay: 0.6s;
-          }
-
-          .animate__fadeInUp.delay-800 {
-            animation-delay: 0.8s;
-          }
-
-          .animate__fadeIn {
-            animation: fadeInText 1.5s ease-out forwards;
-          }
-
-          .animate__slideInFromLeft {
-            animation: slideInFromLeft 1.2s ease-out forwards;
-          }
-
-          .animate__infinite {
-            animation: infiniteScroll 3s ease-in-out infinite;
-          }
-
-          .hover\:scale-110:hover {
-            transform: scale(1.10);
-          }
-
-          .hover\:shadow-xl:hover {
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-          }
-        `}
-      </style>
     </>
   );
 };
